@@ -43,6 +43,7 @@ async function runner() {
 
     lighthouse.stdout.on('data', (data) => {
       console.log(`lighthouse child stdout:\n${data}`);
+      
       const lighthouseText = String(data);
       if (lighthouseText.startsWith('Lighthouse CI score')) {
         process.exit(0);
